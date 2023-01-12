@@ -108,9 +108,18 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 ### PROGRAM 
 /*
+module exp01(S,R,clock,Q,Qbar);
+input S,R,clock;
+output Q,Qbar;
+wire X,Y;
+nand(X,S,clock);
+nand(Y,R,clock);
+nand(Q,X,Qbar);
+nand(Qbar,Y,Q);
+endmodule
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: AKASH R
+RegisterNumber:22008463  
 */
 
 
@@ -122,6 +131,7 @@ RegisterNumber:
 
 
 
+![WhatsApp Image 2023-01-12 at 21 08 37](https://user-images.githubusercontent.com/118707009/212114473-c7317088-1597-4138-b648-c00c808e0f72.jpg)
 
 
 
@@ -131,6 +141,7 @@ RegisterNumber:
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
 
+![WhatsApp Image 2023-01-12 at 21 15 47](https://user-images.githubusercontent.com/118707009/212114365-2da2528d-4580-4eed-a847-655530b0deb9.jpg)
 
 
 
