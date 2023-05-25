@@ -118,9 +118,37 @@ nand(Q,X,Qbar);
 nand(Qbar,Y,Q);
 endmodule
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: AKASH R
-RegisterNumber:22008463  
+Developed by:GURUMOORTHI R
+RegisterNumber:212222230042 
 */
+ ```
+ i] SR flipflops
+module flipflops(S,R,Q,Qbar,clk);
+input S,R,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = S|((~R)&Q);
+Qbar = R|((~S)&(~Q));
+end
+endmodule
+
+ii] JK flipflops
+module JK(J,K,Q,Qbar,clk);
+input J,K,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = (((~K)&Q)|(J&(~Q)));
+Qbar = ~Q; 
+end
+endmodule
+
+```
 
 
 
@@ -129,19 +157,27 @@ RegisterNumber:22008463
 
 ### RTL LOGIC FOR FLIPFLOPS 
 
+### SR flipflpos
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/1d1d20a1-b3a7-43b9-a629-3bda676e68a7)
+
+### JK flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/51d20d05-bc47-4e48-a39d-a0c85d2eb507)
+
+### TIMING DIGRAMS FOR FLIP FLOPS
+
+### SR flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/0fc1ad2f-8e28-4e9b-81c5-5ed4f23b9a60)
+
+### JK flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/1a59b289-4ff4-491d-8478-47c226e93b73)
 
 
-![WhatsApp Image 2023-01-12 at 21 08 37](https://user-images.githubusercontent.com/118707009/212114473-c7317088-1597-4138-b648-c00c808e0f72.jpg)
 
 
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-![WhatsApp Image 2023-01-12 at 21 15 47](https://user-images.githubusercontent.com/118707009/212114365-2da2528d-4580-4eed-a847-655530b0deb9.jpg)
 
 
 
@@ -149,3 +185,6 @@ RegisterNumber:22008463
 
 
 ### RESULTS 
+
+All the flipflops are implementde using verilog and their functionality has been validated using their functional tables.
+
