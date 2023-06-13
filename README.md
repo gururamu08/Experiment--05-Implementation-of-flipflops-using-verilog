@@ -108,21 +108,8 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 ### PROGRAM 
 /*
-module exp01(S,R,clock,Q,Qbar);
-input S,R,clock;
-output Q,Qbar;
-wire X,Y;
-nand(X,S,clock);
-nand(Y,R,clock);
-nand(Q,X,Qbar);
-nand(Qbar,Y,Q);
-endmodule
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by:GURUMOORTHI R
-RegisterNumber:212222230042 
-*/
- ```
- i] SR flipflops
+```
+i] SR flipflops
 module flipflops(S,R,Q,Qbar,clk);
 input S,R,clk;
 output reg Q,Qbar;
@@ -131,7 +118,7 @@ initial Qbar = 1;
 always @(posedge clk)
 begin
 Q = S|((~R)&Q);
-Qbar = R|((~S)&(~Q));
+Qbar = R|((~S)&(~Qbar));
 end
 endmodule
 
@@ -144,11 +131,42 @@ initial Qbar = 1;
 always @(posedge clk)
 begin
 Q = (((~K)&Q)|(J&(~Q)));
-Qbar = ~Q; 
+Qbar = ((~J)&Qbar)|((~K)&(~Qbar)); 
 end
 endmodule
 
+iii] D flipflop
+module Dflipflop(D,Q,Qbar,clk);
+input D,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = D;
+Qbar = ~D;
+end
+endmodule
+
+iv] T flipflop
+module Tflipflop(T,Q,Qbar,clk);
+input T,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = ((T&(~Q))|((~T)&Q));
+Qbar = ((~T)&Qbar)|(T&(~Qbar));
+end
+endmodule
 ```
+
+Program for flipflops  and verify its truth table in quartus using Verilog programming.
+Developed by:GURUMOORTHI R
+RegisterNumber:212222230042 
+*/
+ 
 
 
 
@@ -159,23 +177,41 @@ endmodule
 
 ### SR flipflpos
 
-![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/1d1d20a1-b3a7-43b9-a629-3bda676e68a7)
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/71707ae7-78c4-4e4f-bbeb-b70f6b5c0900)
 
 ### JK flipflop
 
-![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/51d20d05-bc47-4e48-a39d-a0c85d2eb507)
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/8290a8cb-d725-4059-80d3-e5d1df9ff846)
+
+### D fli[pflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/c360770f-ac22-4a5f-98c9-6997e50c69cc)
+
+### T flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/d72198db-bf2e-49da-9fa6-efc6649829e6)
+
+
 
 ### TIMING DIGRAMS FOR FLIP FLOPS
 
 ### SR flipflop
 
-![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/0fc1ad2f-8e28-4e9b-81c5-5ed4f23b9a60)
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/d746c90f-5951-484f-b400-dc4ec95c06de)
+
 
 ### JK flipflop
 
-![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/1a59b289-4ff4-491d-8478-47c226e93b73)
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/d3597509-559d-496a-85ba-3d4f9922a671)
+
+### D flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/9bfb3973-f889-4ce5-aa9c-ca6b249fa89f)
 
 
+### T flipflop
+
+![image](https://github.com/gururamu08/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707009/0d751a86-4d3a-48b1-9d6e-d973ccd92da1)
 
 
 
